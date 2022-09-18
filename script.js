@@ -10,6 +10,8 @@ const handleSearch = () => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => showArtists(data));
+  const albumContainer = elementById("albums");
+  albumContainer.innerHTML = ""
 };
 
 const showArtists = (data) => {
@@ -71,3 +73,4 @@ const showAlbum = (data) => {
     albumContainer.appendChild(div);
   });
 };
+handleSearch()
